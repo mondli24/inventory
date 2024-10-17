@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <br>
+  <hr>
+  
+    <ng-container *ngFor="let inventory of inventories">
+        <p class="item-size">Name : {{ inventory.empName  }}</p>
+        <p class="item-size">Employee number: {{ inventory.employeeNumber  }}</p>
+        <p class="item-size">Date: {{ inventory.currentDate  }}</p>
+      <ion-label *ngFor="let delivery of inventory.items">
+          <h2>Item Name:   {{ delivery.itemName }}</h2>
+          <p class="item-size">Bar Code: {{ delivery.partNumber }}</p>
+          <p class="item-size">Size: {{ delivery.size }}</p>
+          <p class="item-quantity">Quantity: {{ delivery.quantity }}</p>
+          <span [ngClass]="{'low-stock': delivery.quantity < 10, 'out-of-stock': delivery.quantity === 0}">
+            <span *ngIf="delivery.quantity >= 1 && delivery.quantity < 10">Low stock</span>
+            <span *ngIf="delivery.quantity === 0">Out of stock</span>
+          </span>
+          <p class="item-description">Description: {{ delivery.description }}</p>
+        </ion-label>
+        <ion-button (click)="generatePDF(inventory)">Download PDF for Inventory</ion-button>
+    </ng-container>
+</ion-content>
+
+

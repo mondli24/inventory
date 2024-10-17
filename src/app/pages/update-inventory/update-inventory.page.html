@@ -1,0 +1,70 @@
+
+<ion-content [fullscreen]="true" *ngIf="showFirstContent">
+  <ion-list>
+    <ion-item *ngFor="let delivery of stock" lines="full">
+      <ion-thumbnail slot="start"> 
+        <ion-img *ngIf="capturedPhotos.length > 0" [src]="delivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ delivery.itemName }}</h2>
+        <p class="item-size">Size: {{ delivery.size }}</p>
+        <p class="item-quantity">Quantity:  {{ delivery.quantity }}</p>
+        <p class="item-description">Description:  {{ delivery.description }}</p>
+      </ion-label>
+      <div >
+        <ion-button (click)="pickItem(delivery)"  >EDIT</ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content *ngIf="!showFirstContent" class="full-page-content">
+  <br>
+  <br>
+  <hr>
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-button (click)="showFirstContent = true" color="medium">
+          <ion-icon name="arrow-back"></ion-icon>
+          Back to List
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+
+    <ion-item class="selected-delivery">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="selectedDelivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ selectedDelivery.itemName }}</h2>
+        <p class="item-size">Size: {{ selectedDelivery.size }}</p>
+        <p class="item-description">Description: {{ selectedDelivery.description }}</p>
+      </ion-label>
+    </ion-item>
+  <ion-item>
+    <ion-label position="floating">Item Name</ion-label>
+    <ion-input type="text" [(ngModel)]="selectedDelivery.itemName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Size</ion-label>
+    <ion-input type="text" [(ngModel)]="selectedDelivery.size"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Quantity</ion-label>
+    <ion-input type="number" [(ngModel)]="selectedDelivery.quantity"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea type="text" [(ngModel)]="selectedDelivery.description"></ion-textarea>
+  </ion-item>
+
+  <div class="submit-button">
+    <ion-button expand="block" (click)="submitQuantity()">Update</ion-button>
+  </div>
+</ion-content>

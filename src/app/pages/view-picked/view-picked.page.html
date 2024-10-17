@@ -1,0 +1,77 @@
+<!-- 
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Picked Items
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let order of selectedItems">
+      <ion-thumbnail slot="start">
+        <ion-img *ngIf="capturedPhotos.length > 0" [src]="delivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ delivery.itemName }}</h2>
+        <p>Size: {{ delivery.size }}</p>
+        <p class="item-quantity">Quantity:{{delivery.quantity}}  </p> 
+        <p class="item-text-wrap">Description: {{ delivery.description }}</p>
+        <span [ngClass]="{'low-stock': delivery.quantity < 10, 'out-of-stock': delivery.quantity === 0}">
+          <span *ngIf=" delivery.quantity >=1 && delivery.quantity < 10">Low stock</span>
+          <span *ngIf="delivery.quantity === 0">Out of stock</span>
+        </span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="updateQuantity()">Submit pick</ion-button>
+</ion-content> -->
+<!-- 
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ng-container *ngFor="let order of orders">
+      <ion-item lines="full" [hidden]="item.isHidden" *ngFor="let item of order.selectedItems">
+        <ion-thumbnail slot="start">
+          <ion-img *ngIf="item.capturedPhotosUrl" [src]="item.capturedPhotosUrl" alt="Preview Image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ item.itemName }}</h2>
+          <p class="item-size">Bar Code: {{ item.partNumber }}</p>
+          <p class="item-size">Size: {{ item.size }}</p>
+          <p class="item-quantity">Quantity: {{ item.quantity }}</p>
+          <span [ngClass]="{'low-stock': item.quantity < 10, 'out-of-stock': item.quantity === 0}">
+            <span *ngIf="item.quantity >= 1 && item.quantity < 10">Low stock</span>
+            <span *ngIf="item.quantity === 0">Out of stock</span>
+          </span>
+          <p class="item-description">Description: {{ item.description }}</p>
+        </ion-label>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content> -->
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <br>
+  <br>
+  <hr>
+    <ng-container *ngFor="let order of orders">
+        <h2 class="item-size">Name : {{ order.name  }}</h2>
+        <h2 class="item-size">Email address: {{ order.email  }}</h2>
+        <h2 class="item-size">Date: {{ order.currentDate  }}</h2>
+      <ion-label *ngFor="let delivery of order.selectedItems">
+        <!-- <ion-thumbnail slot="start">
+          <ion-img *ngIf="item.capturedPhotosUrl" [src]="item.capturedPhotosUrl" alt="Preview Image"></ion-img>
+        </ion-thumbnail> -->
+          <h2>Item Name:   {{ delivery.itemName }}</h2>
+          <p class="item-size">Bar Code: {{ delivery.partNumber }}</p>
+          <p class="item-size">Size: {{ delivery.size }}</p>
+          <p class="item-quantity">Quantity: {{ delivery.quantity }}</p>
+
+        </ion-label>
+        <ion-button (click)="generatePDF(order)">Download Slip</ion-button>
+    </ng-container>
+    <!-- <ion-button (click)="generatePDF(orders)">Download PDF for Inventory</ion-button> -->
+
+</ion-content>

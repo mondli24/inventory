@@ -1,0 +1,71 @@
+
+// ion-toolbar {
+//   --ion-color-base: #3880ff; 
+// }
+
+// ion-title {
+//   font-size: 1.5rem; 
+// }
+
+
+// ion-item {
+//   --inner-padding-start: 16px; 
+// }
+
+// ion-thumbnail {
+//   width: 100px; 
+//   height: 100px;
+//   border-radius: 10px;
+// }
+
+// ion-label {
+//   padding-left: 10px; 
+// }
+
+// h2 {
+//   font-size: 1.2rem; 
+//   font-weight: bold; 
+// }
+
+// .item-size, .item-quantity, .item-description {
+//   font-size: 0.9rem; 
+//   margin-top: 5px; 
+// }
+
+
+// ion-fab-button {
+//   --background: #3880ff;
+// }
+
+
+// .selected-delivery {
+//   padding: 16px; 
+// }
+
+
+// ion-input {
+//   width: 100%; 
+// }
+
+/* Styling for the submit button */
+.submit-button ion-button {
+  margin-top: 16px; /* Add top margin */
+}
+
+ion-item {
+  display: flex;
+  flex-direction: column;
+}
+
+ion-item:not(:last-child) {
+  margin-bottom: 10px; /* Adjust this value as needed */
+}
+.custom-label {
+  font-size: 20px;
+}
+
+.custom-label .item-size,
+.custom-label .item-quantity,
+.custom-label .item-description {
+  font-size: 16px;
+}

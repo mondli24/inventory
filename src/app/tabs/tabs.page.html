@@ -1,0 +1,48 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Best Brightness App
+    </ion-title>
+    <ion-buttons slot="end"  class="logout-button" (click)="logout()">
+      <ion-icon name="log-out" class="logout-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" (click)="navigateToViewStoreRoom()">
+      <ion-icon name="list"></ion-icon>
+      <ion-label>View</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab5" href="/tabs/tab5">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-label>Add</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" href="/tabs/tab1">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab4" href="/tabs/tab4">
+      <ion-icon name="cart-sharp"></ion-icon>
+      <ion-label>Order</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" href="/pages/update-inventory">
+      <ion-icon name="analytics"></ion-icon>
+      <ion-label>analytics</ion-label>
+    </ion-tab-button>
+
+
+
+  </ion-tab-bar>
+
+</ion-tabs>
+
+<!-- https://www.youtube.com/watch?v=nXeqdjbRHyM&list=PLC9HTNsJgxkSS2iVyBwEemp6OODSPsFsb&index=13 -->

@@ -1,0 +1,53 @@
+
+ion-tabs {
+    background: var(--ion-color-secondary);
+    ion-tab-bar {
+        position:relative;
+        width: 90%;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        border-radius: 30px;
+        padding-bottom: 0;
+        border: 1px solid rgba(2, 52, 54, 0.08);
+        overflow: hidden;
+        box-shadow: 0px -5px 10px rgb(3 181 170 / 8%);
+        height: 50px;
+        --background: var(--ion-color-light);
+        ion-tab-button {
+            --background: var(--ion-color-light);
+            --color: #BEC2C6;
+            ion-icon {
+                font-size: 1.9rem;
+            }
+        }
+    }
+}
+
+/* Styles for the ion-header */
+ion-header {
+    background-color: #3880ff; /* Background color of the header */
+    color: white; /* Text color of the header */
+  }
+  
+  /* Styles for the ion-toolbar */
+  ion-toolbar {
+    --background: transparent; /* Make the toolbar background transparent */
+  }
+  
+  /* Styles for the ion-title */
+  ion-title {
+    font-size: 20px; /* Font size of the title */
+  }
+  
+  /* Styles for the logout button */
+  .logout-button {
+    cursor: pointer; /* Change cursor to pointer when hovering over the button */
+  }
+  
+  /* Styles for the logout icon */
+  .logout-icon {
+    font-size: 40px; /* Adjust the size of the icon */
+    color: white; /* Change the color of the icon */
+  }
+  
+  

@@ -1,0 +1,42 @@
+
+
+
+ <ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Welcome Back</ion-title>
+    <p class="subTitle">Sign in to access your account</p>
+  </div>
+
+  <form >
+
+    <div class="email-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input  placeholder="Email address" name="email" class="form-control" [(ngModel)]="user.email"></ion-input>
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="password-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input  name="password" type="password" placeholder="Password" class="form-control" [(ngModel)]="user.password"></ion-input>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-item>
+        <p style="color: red; font-size: smaller; text-align: center;"> {{ passwordStrength }}</p>
+      </div>
+    </div>
+
+    <div class="forgotPassword">
+      <a [routerLink]="['/forgot']">Forgot password?</a>
+    </div>
+    <div class="signupLink">
+      <p>New member?<a [routerLink]="['/register']"> Sign up</a></p>
+    </div>
+    <ion-button color="success" size="full" (click)="login(user)">Login</ion-button>
+    <ion-button color="success" fill="clear" size="full" (click)="loginWithGoogle()">Continue with google
+      <ion-icon name="logo-google"></ion-icon>
+    </ion-button>
+  </form>
+ </ion-content>

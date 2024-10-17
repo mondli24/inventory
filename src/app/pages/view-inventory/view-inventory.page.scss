@@ -1,0 +1,51 @@
+/* CSS for the ion-header */
+ion-header {
+  --ion-background-color: #1976D2; /* Background color */
+}
+
+/* CSS for the ion-title */
+ion-title {
+  color: white; /* Title color */
+  font-size: 1.5rem; /* Title font size */
+  font-weight: bold; /* Title font weight */
+}
+
+/* CSS for the ion-content */
+ion-content {
+  --ion-background-color: #f0f0f0; /* Content background color */
+}
+
+/* CSS for the ion-list */
+ion-list {
+  padding-top: 60px; /* Remove default padding */
+}
+
+/* CSS for the ion-item */
+ion-item {
+  --inner-padding-end: 0; /* Adjust padding */
+}
+
+/* CSS for the ion-thumbnail */
+ion-thumbnail {
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+  --border-radius: 10px; /* Border radius */
+}
+
+/* CSS for the ion-label */
+ion-label {
+  font-size: 10rem; /* Font size */
+}
+
+/* CSS for the expanded-item */
+.expanded-item {
+  padding: 16px; /* Padding */
+}
+
+/* CSS for the ion-button */
+ion-button {
+  --background: #1976D2; /* Button background color */
+  --color: white; /* Button text color */
+  --border-radius: 8px; /* Button border radius */
+}
+

@@ -1,0 +1,82 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Welcome To Best Brightness</ion-title>
+    <p class="subTitle">Sign up to create your account</p>
+  </div>
+
+
+    <div class="ion-padding">
+
+      <div class="role-selection">
+        <ion-item>
+          <ion-label>Choose Role</ion-label>
+          <ion-select [(ngModel)]="user.role" style="justify-content:right" placeholder="Select Role">
+            <ion-select-option value="manager">Manager</ion-select-option>
+            <ion-select-option value="picker">Picker</ion-select-option>
+            <!-- <ion-select-option value="deliver">Deliver</ion-select-option> -->
+            <!-- Add more roles if needed -->
+          </ion-select>
+        </ion-item>
+      </div>
+
+      <div class="firstname-login">
+        <div class="formfield">
+          <ion-item>
+            <ion-input name="firstname" placeholder="First name"  [(ngModel)]="user.firstname" required></ion-input>
+            <ion-icon name="person-outline"></ion-icon>
+          </ion-item>
+        </div>
+      </div>
+
+      <div class="lastname-login">
+        <div class="formfield">
+        <ion-item>
+          <ion-input  placeholder="Last name" name="lastname" [(ngModel)]="user.lastname" required></ion-input>
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="cellphone-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input name="cellphone" placeholder="Cellphone number"   [(ngModel)]="user.cellphone" required></ion-input>
+          <ion-icon name="call-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="email-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input name="email" placeholder="Email address"   [(ngModel)]="user.email" required></ion-input>
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+
+    <div class="password-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input name="password" type="password" placeholder="Password"   [(ngModel)]="user.password"  required></ion-input>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+    <div class="confpassword-login">
+      <div class="formfield">
+        <ion-item>
+          <ion-input type="password" placeholder="Confirm password" name="confpassword"  [(ngModel)]="user.confpassword" required></ion-input>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-item>
+        <p style="color: red; font-size: smaller; text-align: center;"> {{ passwordStrength }}</p>
+      </div>
+      <ion-button color="success" (click)="signup(user)"  size="full"  >Sign up</ion-button>
+    </div>
+    <div class="signinLink">
+      <p>Already a member?<a  [routerLink]="['/login']" > Sign-in now</a></p>
+    </div>
+   
+  
+    </div>
+ </ion-content>

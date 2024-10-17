@@ -1,0 +1,62 @@
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Request order</ion-title>
+  </ion-toolbar>
+</ion-header>
+<!-- 
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div>
+    <ion-button expand="block" [disabled]="buttonClicked" (click)="addOrdersToFirestore(orders)" >Add</ion-button>
+  </div>
+  <ion-list *ngFor="let inventory of stock">
+    <ng-container *ngFor="let delivery of inventory.items">
+      <ion-item lines="full" [hidden]="inventory.isHidden" >
+        <ion-thumbnail slot="start">
+          <ion-img *ngIf="delivery.capturedPhotosUrl" [src]="delivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ delivery.itemName }}</h2>
+          <p class="item-size">Bar Code: {{ delivery.partNumber }}</p>
+          <p class="item-size">Size: {{ delivery.size }}</p>
+          <p class="item-quantity">Quantity: {{ delivery.quantity }}</p>
+          <span [ngClass]="{'low-stock': delivery.quantity < 10, 'out-of-stock': delivery.quantity === 0}">
+            <span *ngIf="delivery.quantity >= 1 && delivery.quantity < 10">Low stock</span>
+            <span *ngIf="delivery.quantity === 0">Out of stock</span>
+          </span>
+          <p class="item-description">Description: {{ delivery.description }}</p>
+        </ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="delivery.selected" (ionChange)="toggleInput(delivery)"></ion-checkbox>
+      </ion-item>
+      <ion-item >
+        <ion-input type="number" placeholder="Quantity"  [(ngModel)]="delivery.quantity"  min="0"></ion-input>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content> -->
+
+<ion-content [fullscreen]="true" class="ion-text-center">
+  <div>
+    <ion-button expand="block" [disabled]="buttonClicked" (click)="addOrdersToFirestore(orders)" >Add</ion-button>
+  </div>
+  <ion-list *ngFor="let delivery of stock" >
+    <ion-item lines="full" [hidden]="delivery.isHidden">
+      <ion-thumbnail slot="start"> 
+        <ion-img *ngIf="capturedPhotos.length > 0" [src]="delivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label class="custom-label">
+        <h2>{{ delivery.itemName }}</h2>
+        <p class="item-size">Bar Code: {{ delivery.partNumber }}</p>
+        <p class="item-size">Size: {{ delivery.size }}</p>
+        <p class="item-quantity">Quantity:{{delivery.quantity}}  </p> 
+        <p class="item-description">Description: {{ delivery.description }}</p>
+      </ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="delivery.selected" [disabled]="!delivery.quantity" (ionChange)="toggleInput(delivery)"></ion-checkbox>
+    </ion-item>
+    <ion-item >
+      <ion-input type="number" [placeholder]="delivery.quantity ? '' : 'Enter quantity'" [(ngModel)]="delivery.quantity" min="0"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

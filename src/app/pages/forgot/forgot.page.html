@@ -1,0 +1,26 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Enter your email
+      <p class="subTitle">To receive a reset password link</p>
+    </ion-title>
+  </div>
+
+
+
+    <div>
+      <div>
+        <ion-item>
+          <ion-input  [(ngModel)]="user.email" placeholder="Email address" class="input"></ion-input>
+          <ion-icon name="mail-outline"></ion-icon>
+        </ion-item>
+      </div>
+    </div>
+    
+    <div class="signinLink">
+      <p>Remembered your password?<a [routerLink]="['/login']"> Sign-In</a></p>
+    </div>
+    <ion-button color="success" size="full" (click)="resetPassword()" >Reset password</ion-button>
+ 
+
+ 
+ </ion-content>

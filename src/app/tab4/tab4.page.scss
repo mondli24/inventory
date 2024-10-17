@@ -1,0 +1,39 @@
+// h1 {
+//     animation-name: slideIn;
+//     animation-duration: 0.5s;
+//     animation-timing-function: ease-in-out;
+//   }
+  ion-title {
+  width: 100%;
+  text-align: center;
+}
+
+.item-name {
+  color: #007bff; /* Blue color for item name */
+  font-weight: bold;
+}
+
+.item-size, .item-quantity, .item-description {
+  color: #333; /* Dark gray color for other details */
+  margin-bottom: 5px;
+}
+
+ion-fab{
+justify-content: end;
+margin-left: 220px;
+margin-bottom: 70px;
+
+}
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  

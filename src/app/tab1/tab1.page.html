@@ -1,0 +1,18 @@
+
+<ion-content [fullscreen]="true" >
+  <ion-list >
+    <ion-item *ngFor="let delivery of products" lines="full" [hidden]="delivery.isHidden">
+      
+      <ion-thumbnail slot="start"> 
+        <ion-img *ngIf="capturedPhotos.length > 0" [src]="delivery.capturedPhotosUrl" alt="Preview Image"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ delivery.itemName }}</h2>
+        <p class="item-size">Size: {{ delivery.size }}</p>
+        <p class="item-quantity">Quantity:  {{ delivery.quantity }}</p>
+        <p class="item-description">Description:  {{ delivery.description }}</p>
+      </ion-label>
+      <ion-button slot="end" >Edit</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>

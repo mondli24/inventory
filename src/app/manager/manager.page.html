@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Best Brightness App
+    </ion-title>
+    <ion-buttons slot="end"  class="logout-button" (click)="logout()">
+      <ion-icon name="log-out" class="logout-icon"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button class="view-inventory" href="/manager/view-inventory">
+      <ion-icon name="list"></ion-icon>
+      <ion-label>View</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button class="add-inventory" href="/manager/add-inventory">
+      <ion-icon name="add-outline"></ion-icon>
+      <ion-label>Add</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-tab-button class="update-inventory" href="/manager/update-inventory">
+      <ion-icon name="sync-outline"></ion-icon>
+      <ion-label>Update</ion-label>
+    </ion-tab-button> -->
+
+    <ion-tab-button class="update" href="/manager/update-inventory">
+      <ion-icon name="sync-outline"></ion-icon>
+      <ion-label>Update</ion-label>
+    </ion-tab-button>
+
+    <!-- <ion-icon name="home"></ion-icon> -->
+    <ion-tab-button class="view-all-slips" href="/manager/view-all-slips">
+      <ion-icon name="receipt-outline"></ion-icon>
+      <ion-label>View Slip</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="analytics" href="/pages/analytics">
+      <ion-icon name="analytics"></ion-icon>
+      <ion-label>analytics</ion-label>
+    </ion-tab-button>
+
+
+
+  </ion-tab-bar>
+
+</ion-tabs>
+
+<!-- https://www.youtube.com/watch?v=nXeqdjbRHyM&list=PLC9HTNsJgxkSS2iVyBwEemp6OODSPsFsb&index=13 -->

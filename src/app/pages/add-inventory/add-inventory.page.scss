@@ -1,0 +1,82 @@
+
+form.ion-padding {
+  max-width: 600px; 
+  margin: auto; 
+}
+
+
+ion-input {
+  --padding-start: 8px;
+  --padding-end: 8px; 
+  --border-radius: 8px; 
+}
+
+
+ion-textarea {
+  --padding-start: 8px; 
+  --padding-end: 8px; 
+  --border-radius: 8px; 
+}
+
+
+input[type="file"] {
+  display: block; 
+  margin: 10px 0; 
+  color: #387ef5;
+}
+
+
+.icon {
+  font-size: 30px; 
+  color: #387ef5; 
+  margin-left: 10px;
+  vertical-align: middle; 
+}
+
+
+ion-button {
+  --background: #3880ff; 
+  --background-activated: #3dc2ff; 
+  --border-radius: 20px; 
+  margin-top: 20px; 
+}
+
+
+.ion-padding {
+  padding-bottom: 10px;
+}
+
+.capture-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.camera-icon {
+  margin-left: 5px;
+  font-size: 40px;
+}
+img{
+  height: 150px;
+  width: 350px;
+  text-align: center;
+}
+
+ion-card {
+  --background: #fff; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+ion-card-title {
+  color: var(--ion-color-primary); 
+}
+ion-content {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+}

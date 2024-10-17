@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <!-- Quick Stats -->
+ <ion-grid>
+  <ion-row>
+    <ion-col size="6" size-md="3" *ngFor="let stat of stats">
+      <ion-card (click)="goToDetail(stat.label)">
+        <ion-card-header>
+          <ion-card-title>{{ stat.title }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <div class="stat-value">{{ stat.value }}</div>
+          <ion-icon [name]="stat.icon"></ion-icon>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<!-- Alerts -->
+<ion-list>
+  <ion-list-header>
+    <ion-label>Alerts</ion-label>
+  </ion-list-header>
+  <ion-item *ngFor="let alert of alerts">
+    <ion-icon slot="start" name="warning" color="danger"></ion-icon>
+    <ion-label>{{ alert.message }}</ion-label>
+  </ion-item>
+</ion-list>
+
+<!-- Quick Actions -->
+<ion-row>
+  <ion-col size="6" *ngFor="let action of quickActions">
+    <ion-button expand="block" (click)="performAction(action.type)">
+      <ion-icon slot="start" [name]="action.icon"></ion-icon>
+      {{ action.title }}
+    </ion-button>
+  </ion-col>
+</ion-row>
+
+</ion-content>

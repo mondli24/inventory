@@ -1,0 +1,33 @@
+/* Global CSS */
+ion-content {
+    --background: #f5f5f5; /* Set background color */
+  }
+  
+  /* Specific CSS for the item */
+  ion-item {
+    --border-radius: 10px; /* Adjust border radius as needed */
+  }
+  
+  .item-description {
+    color: #555; /* Description color */
+    margin-bottom: 5px; /* Add margin */
+  }
+  
+  .item-price {
+    color: #007bff; /* Price color */
+    font-weight: bold; /* Bold text */
+  }
+  
+  .item-size {
+    font-style: italic; /* Italicize size */
+  }
+  
+  ion-thumbnail {
+    width: 80px; /* Adjust thumbnail width */
+    height: 80px; /* Adjust thumbnail height */
+    border-radius: 50%; /* Make thumbnail circular */
+    margin-right: 10px; /* Add margin */
+  }
+
+  
+  

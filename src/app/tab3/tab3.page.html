@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary"> <!-- Adjust color as needed -->
+    <ion-title class="ion-text-start"> <!-- Center the title -->
+      Diliveries <!-- Corrected spelling to "Deliveries" -->
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let delivery of deliveries" lines="full" (click)="expandItem(delivery)" [hidden]="delivery.isHidden">
+      <!-- Adjust item lines -->
+      <ion-thumbnail slot="start"> <!-- Thumbnail for image -->
+        <img [src]="delivery.imageBase64" alt="Delivery Image"> <!-- Dynamic image source -->
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ delivery.itemName }}</h2>
+        <p class="item-description">{{ delivery.description }}</p>
+        <p class="item-price">{{ delivery.price }}</p>
+        <p class="item-size">{{ delivery.size }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Fullscreen expanded item -->
+  <div class="expanded-item" *ngIf="expandedItem">
+    <ion-item lines="full">
+      <ion-thumbnail slot="start">
+        <img [src]="expandedItem.imageBase64" alt="Expanded Item Image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ expandedItem.itemName }}</h2>
+        <p class="item-description">{{ expandedItem.description }}</p>
+        <p class="item-price">{{ expandedItem.price }}</p>
+        <ion-item>
+          <ion-label>Quantity:</ion-label>
+          <ion-input type="number" ></ion-input>
+        </ion-item>
+        <!-- <ion-item>
+          <ion-label>Size:</ion-label>
+          <ion-select [(ngModel)]="selectedSize">
+            <ion-select-option *ngFor="let size of sizeOptions" [value]="size">{{ size }}</ion-select-option>
+            Add more options as needed
+          </ion-select>
+        </ion-item> -->
+      </ion-label>
+      <ion-button slot="end" (click)="collapseItem()">Close</ion-button>
+    </ion-item>
+  </div>
+</ion-content>
